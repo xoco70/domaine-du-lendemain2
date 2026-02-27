@@ -1,0 +1,38 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers d'éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.log
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+
+# Fichiers de cache
+.cache/
+node_modules/
+
+# Fichiers d'environnement
+.env
+.env.local
+
+# Fichiers de build (si compilation future)
+dist/
+build/
+
+# Fichiers de documentation locale
+docs/private/
+
+# Fichiers de test locaux
+test-results/
+coverage/
