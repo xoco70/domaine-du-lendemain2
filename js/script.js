@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navToggle.setAttribute('aria-expanded', String(!expanded));
             navToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
-            navMenu.setAttribute('aria-hidden', String(expanded));
         });
     }
     
@@ -228,8 +227,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if (ageAccept) {
             ageAccept.addEventListener('click', () => {
-                localStorage.setItem('ageConfirmed', 'true');
-                ageBanner.hidden = true;
+                try {
+                    localStorage.setItem('ageConfirmed', 'true');
+                } catch (e) {
+                    console.warn('Impossible d\'accéder au stockage local pour la confirmation d\'âge.', e);
+                }
+                if (ageBanner) {
+                    ageBanner.remove();
+                }
             });
         }
         // Mentions légales affichées dans le footer (plus de modale)
